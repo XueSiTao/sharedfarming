@@ -27,6 +27,14 @@
 	<!-- 导包 -->
 
 	<dependencies>
+		<!-- 使项目可以打成war包 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
 
 		<!-- 访问静态资源 -->
 		<dependency>
@@ -121,29 +129,19 @@
 	</dependencies>
 
 	<build>
+		 <finalName>sharedfarming</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifest>
-							    <!--此处存放运行的主类 -->
-							<mainClass>org.conan.mymahout.recommendation.svd.SvdRunner</mainClass>
-						</manifest>
-					</archive>
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
-
-
-
-
+	
+	
+	
+	
+	
 
 	<repositories>
 		<repository>

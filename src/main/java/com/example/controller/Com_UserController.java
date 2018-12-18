@@ -17,6 +17,12 @@ public class Com_UserController {
 	@Resource
 	private Com_UserService userService;
 	
+	@RequestMapping("/")
+	@ResponseBody
+	public String ll(){
+		
+		return "可以访问!";
+	}
 	
 	@RequestMapping("/login")
 	@ResponseBody

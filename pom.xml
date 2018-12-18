@@ -136,6 +136,7 @@
 	</dependencies>
 
 	<build>
+		 <finalName>sharedfarming</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -143,6 +144,11 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	
+	
+	
+	
 
 	<repositories>
 		<repository>

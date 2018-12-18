@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/")
 public class LoginController {
 
-	@RequestMapping("/")
+	@RequestMapping("/login")
 	@ResponseBody
 	public String HellowWord(String name,String pass){
 		if("admin".equals(name) && "123456".equals(pass)){

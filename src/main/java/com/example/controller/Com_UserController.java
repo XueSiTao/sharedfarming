@@ -14,7 +14,7 @@ import com.example.service.Com_UserService;
 public class Com_UserController {
 
 	@Autowired
-	private Com_UserService userService;
+	private static Com_UserService userService;
 	
 	
 	@RequestMapping("/login")
@@ -25,9 +25,9 @@ public class Com_UserController {
 		user.setLoginpass("admin");
 //		user.setLoginname(bindKeyInput1);
 //		user.setLoginpass(bindKeyInput2);
-		userService.loginReception(user);
-		return null;
+		int cou=userService.loginReception(user);
+		return cou+"";
 	}
 	
-	
+
 }

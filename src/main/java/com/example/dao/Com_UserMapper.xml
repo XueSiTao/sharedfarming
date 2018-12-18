@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.dao.Com_UserMapper" >
+  <resultMap id="BaseResultMap" type="com.example.entity.Com_User" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="loginName" property="loginname" jdbcType="VARCHAR" />
+    <result column="loginPass" property="loginpass" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <!-- 前台登录 -->
+  <select id="loginReception" resultType="int" parameterType="com.example.entity.Com_User">
+  	
+  	SELECT COUNT(*) FROM com_user WHERE loginName=#{loginname} AND loginPass=#{loginpass}
+  
+  </select>
+</mapper>

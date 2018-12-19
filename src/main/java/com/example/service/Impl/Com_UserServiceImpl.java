@@ -1,6 +1,7 @@
 package com.example.service.Impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Service;
 
 import com.example.dao.Com_UserMapper;
@@ -10,7 +11,7 @@ import com.example.service.Com_UserService;
 @Service("Com_UserService")
 public class Com_UserServiceImpl implements Com_UserService {
 
-	@Autowired
+	@Resource
 	private Com_UserMapper mapper;
 	
 	@Override

@@ -30,8 +30,14 @@ public class Com_UserController {
 		Com_User user= new Com_User();
 		user.setLoginname(bindKeyInput1);
 		user.setLoginpass(bindKeyInput2);
+	
 		int cou=userService.loginReception(user);
-		return cou+"";
+		if(cou>0){
+			return "登录成功!";
+		}else{
+			return "登录失败!";
+		}
+		
 	}
 	
 

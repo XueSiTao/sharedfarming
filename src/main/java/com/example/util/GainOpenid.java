@@ -10,8 +10,7 @@ public class GainOpenid {
 
 	public static String getopen(String code) {
 		if(code.length()>0) {
-			String a=code.substring(code.indexOf("=")+1, code.indexOf("&"));
-			String openid=getopenId(a);
+			String openid=getopenId(code);
 			return openid;
 		}else {
 			return null;

@@ -15,17 +15,22 @@ import com.example.util.GainToken;
 @Controller
 @RequestMapping("/")
 public class LoginController {
-	
+
+	/**
+	 * 根据code返回token,返回json数据
+	 * @param code
+	 * @return
+	 */
 	@RequestMapping("/login")
 	@ResponseBody
 	public StatusCodeLogin HellowWord(String code){
 		StatusCodeLogin statuscode=new StatusCodeLogin();
 		String openid= GainOpenid.getopen(code);
 		System.out.println("openid:"+openid);
-		
+
 		if(code != null && code !=""){
+			//获取token
 			String token=GainToken.genToken();
-			
 			statuscode.setMessage("登录成功");
 			statuscode.setStatus(200);
 			Map<String,String> data=new HashMap<>();
@@ -40,8 +45,5 @@ public class LoginController {
 			statuscode.setData(data);
 			return statuscode;
 		}
-		
 	}
-	
-
 }

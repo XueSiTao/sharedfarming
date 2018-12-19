@@ -6,6 +6,9 @@ public class StatusCodeLogin {
 	private int status;
 	private String message;
 	private Map<String,String> data;
+	
+	
+	
 	public int getStatus() {
 		return status;
 	}

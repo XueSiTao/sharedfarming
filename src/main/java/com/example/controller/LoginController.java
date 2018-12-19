@@ -1,6 +1,5 @@
 package com.example.controller;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,12 +18,11 @@ public class LoginController {
 	
 	@RequestMapping("/login")
 	@ResponseBody
-	public Map<String,StatusCodeLogin> HellowWord(String code){
+	public StatusCodeLogin HellowWord(String code){
 		StatusCodeLogin statuscode=new StatusCodeLogin();
 		String openid= GainOpenid.getopen(code);
 		System.out.println("openid:"+openid);
 		
-		Map<String,StatusCodeLogin>  map = new HashMap<>();
 		if(code != null && code!=""){
 			String token=GainToken.genToken();
 			
@@ -33,16 +31,14 @@ public class LoginController {
 			Map<String,String> data=new HashMap<>();
 			data.put("token",token);
 			statuscode.setData(data);
-			map.put("", statuscode);
-			return map;
+			return statuscode;
 		}else{
 			statuscode.setMessage("登录失败");
 			statuscode.setStatus(200);
 			Map<String,String> data=new HashMap<>();
 			data.put("token","");
 			statuscode.setData(data);
-			map.put("", statuscode);
-			return map;
+			return statuscode;
 		}
 		
 	}

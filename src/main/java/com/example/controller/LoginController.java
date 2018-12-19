@@ -20,11 +20,8 @@ public class LoginController {
 	@RequestMapping("/login")
 	@ResponseBody
 	public Map<String,StatusCodeLogin> HellowWord(String code){
-		
 		StatusCodeLogin statuscode=new StatusCodeLogin();
-		
 		String openid= GainOpenid.getopen(code);
-		
 		System.out.println("openid:"+openid);
 		
 		Map<String,StatusCodeLogin>  map = new HashMap<>();

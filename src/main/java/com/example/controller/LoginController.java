@@ -23,7 +23,7 @@ public class LoginController {
 		String openid= GainOpenid.getopen(code);
 		System.out.println("openid:"+openid);
 		
-		if(code != null && code!=""){
+		if(code != null && code !=""){
 			String token=GainToken.genToken();
 			
 			statuscode.setMessage("登录成功");

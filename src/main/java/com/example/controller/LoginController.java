@@ -15,19 +15,11 @@ import com.example.util.GainToken;
 
 @Controller
 @RequestMapping("/")
-public class Com_UserController {
-
-	
-	@RequestMapping("/")
-	@ResponseBody
-	public String ll(){
-		
-		return "可以访问!";
-	}
+public class LoginController {
 	
 	@RequestMapping("/login")
 	@ResponseBody
-	public StatusCodeLogin HellowWord(String code){
+	public Map<String,StatusCodeLogin> HellowWord(String code){
 		
 		StatusCodeLogin statuscode=new StatusCodeLogin();
 		
@@ -35,6 +27,7 @@ public class Com_UserController {
 		
 		System.out.println("openid:"+openid);
 		
+		Map<String,StatusCodeLogin>  map = new HashMap<>();
 		if(code != null && code!=""){
 			String token=GainToken.genToken();
 			
@@ -43,15 +36,16 @@ public class Com_UserController {
 			Map<String,String> data=new HashMap<>();
 			data.put("token",token);
 			statuscode.setData(data);
-			
-			return statuscode;
+			map.put("", statuscode);
+			return map;
 		}else{
 			statuscode.setMessage("登录失败");
 			statuscode.setStatus(200);
 			Map<String,String> data=new HashMap<>();
 			data.put("token","");
 			statuscode.setData(data);
-			return statuscode;
+			map.put("", statuscode);
+			return map;
 		}
 		
 	}
